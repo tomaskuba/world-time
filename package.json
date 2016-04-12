@@ -1,7 +1,7 @@
 {
-  "name": "map-notes",
+  "name": "world-time",
   "version": "1.0.0",
-  "description": "Map Notes - Visual Notebook",
+  "description": "World time single page app",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --inline --content-base .",
