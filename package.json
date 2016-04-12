@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server --inline --content-base .",
     "build": "webpack -p",
-    "publish": "git checkout gh-pages && git checkout master index.html bundle.js && git checkout master"
+    "publish": "git checkout gh-pages && git checkout master index.html bundle.js && git push origin && git checkout master"
   },
   "author": "Tomas Kuba <tomas.kuba.cz@gmail.com>",
   "dependencies": {
