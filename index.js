@@ -8,7 +8,8 @@ var Timer = React.createClass({
   tick: function () {
     return {
       time: moment().tz(this.props.timezone).format('HH:mm:ss'),
-      date: moment().tz(this.props.timezone).format('dddd ll'),
+      day: moment().tz(this.props.timezone).format('dddd'),
+      date: moment().tz(this.props.timezone).format('LL'),
       zone: moment().tz(this.props.timezone).format('z'),
       zoneDiff: moment().tz(this.props.timezone).format('Z'),
       hoursPosition: {
@@ -34,23 +35,30 @@ var Timer = React.createClass({
   },
   render: function() {
     return (
-      <div className="timer">
-        <div className="location">{this.props.name}</div>
-        <div className="clock">
-          <div className="hours-container" style={this.state.hoursPosition}>
-            <div className="hours"></div>
-          </div>
-          <div className="minutes-container" style={this.state.minutesPosition}>
-            <div className="minutes"></div>
-          </div>
-          <div className="seconds-container" style={this.state.secondsPosition}>
-            <div className="seconds"></div>
+      <li className="timer">
+        <h2 className="location">{this.props.name}</h2>
+        <div className="clock-group">
+          <div className="clock">
+            <div className="hours-container" style={this.state.hoursPosition}>
+              <div className="hours"></div>
+            </div>
+            <div className="minutes-container" style={this.state.minutesPosition}>
+              <div className="minutes"></div>
+            </div>
+            <div className="seconds-container" style={this.state.secondsPosition}>
+              <div className="seconds"></div>
+            </div>
           </div>
         </div>
-        <div className="time">{this.state.time}</div>
-        <div className="zone">{this.state.zone} {this.state.zoneDiff}</div>
-        <div className="date">{this.state.date}</div>
-      </div>
+        <div className="time-group">
+          <div className="time">{this.state.time}</div>
+          <div className="zone">{this.state.zone}&nbsp;{this.state.zoneDiff}</div>
+        </div>
+        <div className="date-group">
+          <div className="day">{this.state.day}</div>
+          <div className="date">{this.state.date}</div>
+        </div>
+      </li>
     )
   }
 })
@@ -59,13 +67,13 @@ var App = React.createClass({
   render: function() {
     return (
       <div className="world-time">
-        <div className="row">
-          <Timer timezone='America/Los_Angeles' name='Los Angeles' />
-          <Timer timezone='America/New_York' name='New York' />
-          <Timer timezone='Europe/Prague' name='Prague' />
-          <Timer timezone='Asia/Manila' name='Manila' />
-          <Timer timezone='Australia/Sydney' name='Sydney' />
-        </div>
+          <ul className="timers">
+            <Timer timezone='America/Los_Angeles' name='Los Angeles' />
+            <Timer timezone='America/New_York' name='New York' />
+            <Timer timezone='Europe/Prague' name='Prague' />
+            <Timer timezone='Asia/Manila' name='Manila' />
+            <Timer timezone='Australia/Sydney' name='Sydney' />
+          </ul>
       </div>
     )}
 })
