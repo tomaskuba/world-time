@@ -56,7 +56,7 @@
       background-size: 98%;
     }
     .clock:after {
-      background: #000;
+      background: #f00;
       border-radius: 50%;
       content: "";
       position: absolute;
@@ -66,6 +66,7 @@
       width: 5%;
       height: 5%;
       z-index: 10;
+      box-shadow: 0 0 4px rgba(0,0,0,0.4);
     }
     .clock .minutes-container,
     .clock .hours-container,
@@ -84,6 +85,7 @@
       top: 30%;
       transform-origin: 50% 100%;
       width: 2.5%;
+      box-shadow: 0 0 3px rgba(0,0,0,0.5);
     }
     .clock .minutes {
       background: #000;
@@ -93,6 +95,7 @@
       top: 10%;
       transform-origin: 50% 100%;
       width: 2%;
+      box-shadow: 0 0 3px rgba(0,0,0,0.5);
     }
     .clock .seconds {
       background: #f00;
@@ -103,6 +106,7 @@
       transform-origin: 50% 80%;
       width: 1%;
       z-index: 8;
+      box-shadow: 0 0 4px rgba(0,0,0,0.4);
     }
     /* All wirst */
     @media (max-width: 312px) {
